@@ -10,12 +10,12 @@ resource "aws_instance" "example" {
   ami = "ami-e3a2f79f"
 
   subnet_id                   = "${var.aws-subnet-id}"
-  vpc_security_group_ids      = ["${var.aws-vpc-security-group-id"]
+  vpc_security_group_ids      = ["${var.aws-vpc-security-group-id}"]
   instance_type               = "${var.aws-instance-type}"
-  key_name                    = "${var.aws-security-key-name"
+  key_name                    = "${var.aws-security-key-name}"
   associate_public_ip_address = true
   monitoring                  = true
-  user_data                   = "${file("bootstrap.tf")}"
+  user_data                   = "${file("bootstrap.ps1")}"
 
   root_block_device {
     volume_size           = 128
