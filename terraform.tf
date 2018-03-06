@@ -6,11 +6,6 @@ terraform {
   }
 }
 
-variable "aws-subnet-id" {}
-variable "aws-vpc-security-group-id" {}
-variable "aws-instance-type" {}
-variable "aws-security-key-name" {}
-
 resource "aws_instance" "example" {
   ami = "ami-e3a2f79f"
 
@@ -33,3 +28,8 @@ resource "aws_instance" "example" {
   }
 
 }
+
+variable "aws-subnet-id" {}
+variable "aws-vpc-security-group-id" {}
+variable "aws-instance-type" {}
+variable "aws-security-key-name" {}
