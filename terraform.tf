@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "octopus-terraform-releasetour"
     key    = "releasetour.tfstate"
-    region = "${var.aws-region}"
+    region = "ap-southeast-1"
   }
 }
 
