@@ -1,11 +1,10 @@
 <powershell>
-# File is named .tf instead of .ps1 so Octopus will apply config transformation
 Start-Transcript -path "C:\Bootstrap.txt" -append
 
 $tentacleDownloadPath = "https://octopus.com/downloads/latest/WindowsX64/OctopusTentacle"
-$octopusServerUrl = "${var.octopus.server-url}"
-$octopusApiKey = "${var.octopus.server-api-key}"
-$octopusServerThumbprint = "${var.octopus.server-thumbprint}"
+$octopusServerUrl = $env:OCTOPUS_URL
+$octopusApiKey = $env:OCTOPUS_API
+$octopusServerThumbprint = $env:OCTOPUS_THUMBPRINT
 $registerInEnvironments = "Development"
 $registerInRoles = "web"
 $tentacleListenPort = 10933
